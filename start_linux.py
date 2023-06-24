@@ -2,6 +2,8 @@ import os
 import platform
 import subprocess
 import sys
+from google.colab import drive 
+drive.mount('/content/drive')
 
 # Adjust the working directory
 os.chdir('/content/drive/MyDrive/aiweb/text-generation-webui')
@@ -55,4 +57,5 @@ os.environ['CUDA_HOME'] = INSTALL_ENV_DIR
 subprocess.run(f". {os.path.join(CONDA_ROOT_PREFIX, 'etc', 'profile.d', 'conda.sh')} && conda activate {INSTALL_ENV_DIR}", shell=True, check=True)
 
 # Run webui.py
+os.chdir('/content/Yvtyvyf')
 subprocess.run("python webui.py", shell=True, check=True)
