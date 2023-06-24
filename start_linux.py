@@ -30,6 +30,7 @@ if not conda_exists:
     subprocess.run(f"wget -q {MINICONDA_DOWNLOAD_URL} -O {os.path.join(INSTALL_DIR, 'miniconda_installer.sh')}", shell=True, check=True)
     subprocess.run(f"chmod u+x {os.path.join(INSTALL_DIR, 'miniconda_installer.sh')}", shell=True, check=True)
     subprocess.run(f"bash {os.path.join(INSTALL_DIR, 'miniconda_installer.sh')} -b -p {CONDA_ROOT_PREFIX}", shell=True, check=True)
+    subprocess.run('export PATH="/content/drive/MyDrive/aiweb/text-generation-webui/installer_files/conda/bin:$PATH"', shell=True)
 
     # Test the conda binary
     subprocess.run(f"{os.path.join(CONDA_ROOT_PREFIX, 'bin', 'conda')} --version", shell=True, check=True)
