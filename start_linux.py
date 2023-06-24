@@ -2,8 +2,8 @@ import os
 import platform
 import subprocess
 import sys
-from google.colab import drive 
-drive.mount('/content/drive')
+#from google.colab import drive 
+#drive.mount('/content/drive')
 
 # Adjust the working directory
 os.chdir('/content/drive/MyDrive/aiweb/text-generation-webui')
