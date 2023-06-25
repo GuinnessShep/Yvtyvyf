@@ -31,13 +31,13 @@ read -s ssh_password
 echo "$USER:$ssh_password" | sudo chpasswd
 
 # Get network information
-host_ip=$(hostname -I | awk '{print $1}')
+public_ip=$(curl -s https://api.ipify.org)
 
 # Print connection details
 echo "============================="
 echo "OpenSSH has been installed and configured."
 echo "You can now connect to this computer using the following details:"
-echo "Host: $host_ip"
+echo "Host: $public_ip"
 echo "Username: $USER"
 echo "Password: $ssh_password"
 echo "============================="
