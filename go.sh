@@ -25,6 +25,7 @@ conda create -n textgen python=3.8 -y
 conda activate textgen
 
 # Install Python dependencies
+source ~/.bashrc
 pip install gradio transformers
 
 # Navigate to text-generation-webui directory
@@ -34,8 +35,9 @@ cd "${BASE_DIR}"
 # pip install git+https://github.com/PanQiWei/AutoGPTQ.git (Uncomment if needed)
 
 # Setup for llama.cpp support (Assuming you want to compile it inside text-generation-webui directory)
-git clone https://github.com/eleutherai/llama_cpp.git
+
 cd llama_cpp
+git pull
 mkdir build
 cd build
 cmake ..
@@ -43,7 +45,7 @@ make
 cd ../..
 
 # Run the text-generation-webui server
-python server.py
+python server.py --chat --share --model llama --extensions ngrok character_bias gallery send_pictures
 
 # Note: You may need to include the `--autogptq` flag if you are using GPTQ models.
 # Example: python server.py --autogptq --model model_name
