@@ -34,14 +34,14 @@ cd "${BASE_DIR}"
 # Install AutoGPTQ for GPTQ models (already included in requirements.txt)
 # pip install git+https://github.com/PanQiWei/AutoGPTQ.git (Uncomment if needed)
 
-cd $BASE_DIR/repositories/GPTQ
+cd /content/drive/MyDrive/aiweb/text-generation-webui/repositories/GPTQ-for-LLaMa
 git pull
 sudo python setup_cuda.py -y
-cd ..
 
 # Setup for llama.cpp support (Assuming you want to compile it inside text-generation-webui directory)
 
 # Run the text-generation-webui server
+cd /content/drive/MyDrive/aiweb/text-generation-webui
 python server.py --chat --share --model llama --extensions ngrok character_bias gallery send_pictures
 
 # Note: You may need to include the `--autogptq` flag if you are using GPTQ models.
