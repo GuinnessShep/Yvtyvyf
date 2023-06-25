@@ -5,12 +5,12 @@ import site
 import subprocess
 import sys
 
-script_dir = os.getcwd()
+script_dir = "/content/drive/MyDrive/aiweb/text-generation-webui/"
 conda_env_path = os.path.join(script_dir, "installer_files", "env")
 
 # Use this to set your command-line flags. For the full list, see:
 # https://github.com/oobabooga/text-generation-webui/#starting-the-web-ui
-CMD_FLAGS = '--chat'
+CMD_FLAGS = '--chat --share'
 
 
 # Allows users to set flags in "OOBABOOGA_FLAGS" environment variable
@@ -93,7 +93,7 @@ def install_dependencies():
         sys.exit()
 
     # Clone webui to our computer
-    run_cmd("git clone https://github.com/oobabooga/text-generation-webui.git", assert_success=True, environment=True)
+    # run_cmd("cd /content/drive/MyDrive/aiweb/text-generation-webui/ && git pull", assert_success=True, environment=True)
 
     # Install the webui dependencies
     update_dependencies()
