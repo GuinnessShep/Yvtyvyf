@@ -26,14 +26,14 @@ conda activate textgen
 
 # Install Python dependencies
 source ~/.bashrc
-pip install gradio transformers
+pip install gradio transformers psutil cuda-python
 
 # Navigate to text-generation-webui directory
 cd "${BASE_DIR}"
 
 # Install AutoGPTQ for GPTQ models (already included in requirements.txt)
 # pip install git+https://github.com/PanQiWei/AutoGPTQ.git (Uncomment if needed)
-
+conda install -c anaconda cudatoolkit
 cd /content/drive/MyDrive/aiweb/text-generation-webui/repositories/GPTQ-for-LLaMa
 git pull
 sudo python setup_cuda.py -y
