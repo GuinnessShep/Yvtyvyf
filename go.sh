@@ -33,7 +33,7 @@ cd "${BASE_DIR}"
 
 # Install AutoGPTQ for GPTQ models (already included in requirements.txt)
 # pip install git+https://github.com/PanQiWei/AutoGPTQ.git (Uncomment if needed)
-conda install -c anaconda cudatoolkit
+conda install -c anaconda cudatoolkit -y
 cd /content/drive/MyDrive/aiweb/text-generation-webui/repositories/GPTQ-for-LLaMa
 git pull
 sudo python setup_cuda.py -y
